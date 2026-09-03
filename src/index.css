@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg: #020807;
+  --color-bg-2: #030B09;
+  --color-bg-3: #06100E;
+  --color-accent: #35F2B0;
+  --color-accent-2: #28DFA3;
+  --color-accent-3: #50FFC2;
+  --color-text: #F0F7F4;
+  --color-text-secondary: #8EA8A0;
+  --color-text-muted: #49655D;
+  --color-border: rgba(70, 150, 125, 0.12);
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: none;
+}
+
+@media (pointer: coarse) {
+  body {
+    cursor: auto;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(53, 242, 176, 0.15);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(53, 242, 176, 0.3);
+}
+
+/* Selection */
+::selection {
+  background: rgba(53, 242, 176, 0.2);
+  color: var(--color-text);
+}
+
+/* Font families */
+.font-mono,
+code,
+pre,
+[class*="font-mono"] {
+  font-family: var(--font-mono);
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Smooth transitions for links */
+a {
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Input/select reset for dark theme */
+select option {
+  background-color: #030B09;
+  color: #F0F7F4;
+}
+
+/* Canvas elements */
+canvas {
+  display: block;
+}
+
+/* Tailwind custom */
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-green-accent: #35F2B0;
+  --color-green-bright: #50FFC2;
+  --color-green-dim: #28DFA3;
+  
+  --color-dark-bg: #020807;
+  --color-dark-surface: #030B09;
+  --color-dark-elevated: #06100E;
+}
